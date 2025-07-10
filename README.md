@@ -15,7 +15,7 @@ Projeto aberto para criação de uma linguagem binária universal estruturada, c
 
 Para dúvidas, sugestões ou colaborações, entre em contato:
 
-santonas55a@gmail.com
+sammm59a@gmail.com
 
 ---
 
