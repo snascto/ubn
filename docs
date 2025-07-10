@@ -1,1 +1,22 @@
+# Whitepaper Técnico – UBN (Universal Binary Network)
+
+## Introdução
+
+O UBN propõe um novo padrão de representação e execução binária universal. Seu objetivo é ser compreensível tanto por máquinas quanto por inteligências artificiais, com estrutura modular, auditável e capaz de operar diretamente sobre múltiplas arquiteturas de hardware.
+
+---
+
+## Estrutura de um bloco UBN
+
+Cada bloco é composto por:
+
+- Header (identificação, versão, tipo)
+- Tipo de dado (INSTR, FUNC, DATA, AI)
+- Arquitetura alvo
+- Payload binário
+- Metadados de origem, IA, linguagem
+- Checksum/assinatura
+
+Exemplo:
+
 
