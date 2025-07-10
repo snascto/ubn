@@ -1,1 +1,19 @@
+# Protótipo simples para converter string decimal para binário com tags UBN
+
+def decimal_to_ubn_bin(value: int) -> bytes:
+    """
+    Converte um inteiro decimal para um bloco UBN binário simples.
+    """
+    header = b'UBN01'  # header fixo
+    type_tag = b'DEC'  # tipo decimal
+    payload = value.to_bytes((value.bit_length() + 7) // 8, byteorder='big')
+    length = len(payload).to_bytes(2, 'big')
+    metadata = b'SRC=python;FUNC=decimal_to_ubn_bin;'
+    block = header + type_tag + length + payload + metadata
+    return block
+
+if __name__ == "__main__":
+    val = 12345
+    blk = decimal_to_ubn_bin(val)
+    print(f"Bloco UBN para {val}: {blk.hex()}")
 
