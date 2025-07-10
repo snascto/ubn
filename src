@@ -17,3 +17,25 @@ if __name__ == "__main__":
     blk = decimal_to_ubn_bin(val)
     print(f"Bloco UBN para {val}: {blk.hex()}")
 
+# Protótipo VM simples para ler e interpretar bloco UBN (limitado)
+
+def parse_ubn_block(block: bytes):
+    header = block[0:5].decode()
+    type_tag = block[5:8].decode()
+    length = int.from_bytes(block[8:10], 'big')
+    payload = block[10:10+length]
+    metadata = block[10+length:].decode()
+    return {
+        "header": header,
+        "type": type_tag,
+        "length": length,
+        "payload": payload,
+        "metadata": metadata
+    }
+
+if __name__ == "__main__":
+    example_block = b'UBN01DEC\x0002\x30\x39SRC=python;FUNC=decimal_to_ubn_bin;'
+    parsed = parse_ubn_block(example_block)
+    print(parsed)
+
+
